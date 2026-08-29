@@ -59,7 +59,7 @@ Route::middleware('auth')->group(function () {
     })->name('password.edit');
 
     Route::put('/change-password', [ProfileController::class, 'updatePassword'])
-        ->name('password.update');
+        ->name('profile.password.update');
 
 
     // ================= JADWAL =================
