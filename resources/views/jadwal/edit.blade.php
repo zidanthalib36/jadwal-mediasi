@@ -13,6 +13,15 @@
         <form action="{{ route('jadwal.update', $jadwal->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
+            @if ($errors->any())
+    <div class="alert alert-danger mb-3">
+        <ul class="mb-0 ps-3">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
             <div class="row">
 
