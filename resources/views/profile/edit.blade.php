@@ -20,7 +20,15 @@
                 <form method="post" action="{{ route('profile.update') }}">
                     @csrf
                     @method('patch')
-
+@if ($errors->any())
+    <div class="alert alert-danger" style="color: red; background: #ffe6e6; padding: 10px; margin-bottom: 15px;">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
                     <div class="form-group">
                         <label>WhatsApp</label>
                         <input  type="number" name="whatsapp" required
