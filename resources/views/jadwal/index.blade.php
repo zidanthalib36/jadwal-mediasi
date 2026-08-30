@@ -103,7 +103,17 @@ $(document).ready(function() {
     </div>
 
 </div>
+@if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show mb-3" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
 
+    @if (session('error'))
+        <div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
+            {{ session('error') }}
+        </div>
+    @endif
 <div class="card">
     <div class="card-body table-responsive">
 
